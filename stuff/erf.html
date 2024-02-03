@@ -76,10 +76,14 @@ function onLoad() {
       // left arrow
       currentIndex--;
       loadImage(loadedIds[currentIndex], false);
-    } else if (e.keyCode == "39" && currentIndex < loadedIds.length - 1) {
+    } else if (e.keyCode == "39") {
       // right arrow
-      currentIndex++;
-      loadImage(loadedIds[currentIndex], false);
+      if (currentIndex < loadedIds.length - 1) {
+        currentIndex++;
+        loadImage(loadedIds[currentIndex], false);
+      } else {
+        loadRandomImage();
+      }
     }
   }
 
